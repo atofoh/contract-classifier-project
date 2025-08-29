@@ -8,7 +8,7 @@ app = FastAPI(title="Ghana Contracts Classifier API", version="1.0.0")
 class ContractText(BaseModel):
     text: str
 
-model = joblib.load("/mnt/data/models/tfidf_logreg_pipeline.pkl")
+model = joblib.load("/contract-classifier-project/data/models/tfidf_logreg_pipeline.pkl")
 
 def clean_text(text: str) -> str:
     text = text.replace("_x000D_\n", " ").replace("\n", " ")
